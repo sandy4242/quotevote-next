@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react'
+﻿import { renderHook } from '@testing-library/react'
 // @ts-expect-error - Apollo Client v4.0.9 has type resolution issues with useSubscription export
 import { useSubscription } from '@apollo/client'
 import { usePresenceSubscription } from '@/hooks/usePresenceSubscription'
