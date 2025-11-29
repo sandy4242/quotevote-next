@@ -1,4 +1,5 @@
 import { renderHook, act, waitFor } from '@testing-library/react'
+// @ts-expect-error - Apollo Client v4.0.9 has type resolution issues with useMutation export
 import { useMutation } from '@apollo/client'
 import { useTypingIndicator } from '@/hooks/useTypingIndicator'
 

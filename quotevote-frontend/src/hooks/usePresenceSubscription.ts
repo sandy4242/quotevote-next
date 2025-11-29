@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 // For now, this is a placeholder implementation
 // TODO: Configure Apollo Client with subscription support (WebSocket link)
 import { useAppStore } from '@/store'
-import type { PresenceData } from '@/types/hooks'
 
 /**
  * Custom hook to subscribe to presence updates

@@ -1,5 +1,6 @@
 'use client'
 
+// @ts-expect-error - Apollo Client v4.0.9 has type resolution issues with useMutation export
 import { useMutation } from '@apollo/client'
 import { useAppStore } from '@/store'
 import {
@@ -55,7 +56,7 @@ export const useRosterManagement = (): UseRosterManagementReturn => {
             })
             addPendingRequest(result.data.addBuddy)
             return result.data.addBuddy
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Add buddy error:', error)
             throw error
         }
@@ -68,7 +69,7 @@ export const useRosterManagement = (): UseRosterManagementReturn => {
             })
             removePendingRequest(rosterId)
             return result.data.acceptBuddy
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Accept buddy error:', error)
             throw error
         }
@@ -81,7 +82,7 @@ export const useRosterManagement = (): UseRosterManagementReturn => {
             })
             removePendingRequest(rosterId)
             return result.data.declineBuddy
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Decline buddy error:', error)
             throw error
         }
@@ -94,7 +95,7 @@ export const useRosterManagement = (): UseRosterManagementReturn => {
             })
             addBlockedUser(buddyId)
             return result.data.blockBuddy
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Block buddy error:', error)
             throw error
         }
@@ -107,7 +108,7 @@ export const useRosterManagement = (): UseRosterManagementReturn => {
             })
             removeBlockedUser(buddyId)
             return result.data.unblockBuddy
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Unblock buddy error:', error)
             throw error
         }
@@ -119,7 +120,7 @@ export const useRosterManagement = (): UseRosterManagementReturn => {
                 variables: { buddyId },
             })
             return result.data.removeBuddy
-        } catch (error) {
+        } catch (error: unknown) {
             console.error('Remove buddy error:', error)
             throw error
         }

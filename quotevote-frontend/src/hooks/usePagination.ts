@@ -19,7 +19,7 @@ export const usePagination = ({
     pageSizeParam = 'page_size',
     onPageChange,
     onPageSizeChange,
-    resetOnFilterChange = true,
+    resetOnFilterChange: _resetOnFilterChange = true, // Used by usePaginationWithFilters
 }: PaginationOptions = {}): UsePaginationReturn => {
     const router = useRouter()
     const pathname = usePathname()
