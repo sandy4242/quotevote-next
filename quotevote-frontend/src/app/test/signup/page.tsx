@@ -25,7 +25,7 @@ export default function SignupTestPage() {
     const mockToken = 'test-token-123';
 
     const handleSubmit = async (values: SignupFormData) => {
-        const { username, password, email } = values;
+        const { username, email } = values;
 
         setLoading(true);
         setSignupError(null);

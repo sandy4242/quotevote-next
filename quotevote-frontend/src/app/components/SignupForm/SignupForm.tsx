@@ -37,7 +37,7 @@ const backgroundImages = [
     'actionvance-guy5aS3GvgA-unsplash.jpg',
 ];
 
-export function SignupForm({ user, token, onSubmit, loading, signupError }: SignupFormProps) {
+export function SignupForm({ user, token: _token, onSubmit, loading, signupError }: SignupFormProps) {
     const [selectedBackground, setSelectedBackground] = useState<string | null>(null);
 
     const {
