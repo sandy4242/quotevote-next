@@ -81,19 +81,15 @@ export const GROUPS_QUERY = gql`
 `
 
 /**
- * Get latest quotes query
+ * Get action reactions query
  */
-export const GET_LATEST_QUOTES = gql`
-  query latestQuotes($limit: Int!) {
-    latestQuotes(limit: $limit) {
+export const GET_ACTION_REACTIONS = gql`
+  query GetActionReactions($actionId: ID!) {
+    actionReactions(actionId: $actionId) {
       _id
-      quote
-      created
-      user {
-        _id
-        username
-        contributorBadge
-      }
+      userId
+      actionId
+      emoji
     }
   }
 `
