@@ -10,14 +10,18 @@
     "test": "jest",
     "lint": "eslint ."
   },
+  "_legacy_scripts_TODO_remove_after_stable": {
+    "dev": "babel-node src/index.js",
+    "build": "babel src -d dist"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
     "@apollo/server": "^5.2.0",
     "@as-integrations/express5": "^1.1.2",
     "bcryptjs": "^3.0.3",
+    "commonjs": "^0.0.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
