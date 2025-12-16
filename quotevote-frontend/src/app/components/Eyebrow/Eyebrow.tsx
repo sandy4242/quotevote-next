@@ -8,8 +8,8 @@ import { EyebrowFormData } from "@/types/eyebrow";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import LoginOptionsModal from "./LoginOptionsModal";
-import OnboardingCompletionModal from "./OnboardingCompletionModal";
+import LoginOptionsModal from "@/app/components/Eyebrow/LoginOptionsModal";
+import OnboardingCompletionModal from "@/app/components/Eyebrow/OnboardingCompletionModal";
 
 export function Eyebrow() {
   const user = useAppStore((state) => state.user.data);
@@ -66,13 +66,9 @@ export function Eyebrow() {
         case "approved_no_password":
           openOnboardingCompletionModal();
           break;
-
-        default:
-          console.log("Unknown");
-          break;
       }
     } catch (err) {
-      console.log(err);
+      setFeedback('An error has occured')
     } finally {
       setIsLoading(false);
     }
