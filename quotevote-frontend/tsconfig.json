@@ -110,6 +110,7 @@
       ],
       "@/components/BuddyList/*": [
         "./src/components/BuddyList/*"
+      ],
       "@/components/UserPosts": [
         "./src/components/UserPosts"
       ],
@@ -124,9 +125,6 @@
       ],
       "@/components/Chat": [
         "./src/components/Chat"
-      ],
-      "@/components/Chat/*": [
-        "./src/components/Chat/*"
       ],
       "@/hooks/*": [
         "./src/hooks/*"
