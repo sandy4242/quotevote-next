@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogContent,
@@ -8,7 +10,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { LoginOptionsModalProps } from "@/types/eyebrow";
 
-const LoginOptionsModal = ({ isOpen, onClose }: LoginOptionsModalProps) => {
+const LoginOptionsModal = ({ email, isOpen, onClose }: LoginOptionsModalProps) => {
+  if (!email) return;
+
   return (
     <Dialog open={isOpen} onOpenChange={() => onClose()}>
       <DialogContent

@@ -20,7 +20,7 @@ export function Eyebrow() {
 
   const [isLoginOptionsModalOpen, setIsLoginOptionsModalOpen] = useState<boolean>(false);
   const [isOnboardingCompletionModalOpen, setIsOnboardingCompletionModalOpen] =
-    useState<boolean>(false);
+    useState<boolean>(true);
 
   const {
     register,
@@ -28,6 +28,7 @@ export function Eyebrow() {
     formState: { errors, isValid },
     clearErrors,
     setValue,
+    watch,
   } = useForm<EyebrowFormData>({
     resolver: zodResolver(eyebrowSchema),
     defaultValues: {
@@ -56,6 +57,7 @@ export function Eyebrow() {
           break;
 
         case "not_requested":
+          await handleNewInviteRequest(email);
           setFeedback("Your request has been received! You’ll be notified once approved.");
           break;
 
@@ -68,10 +70,18 @@ export function Eyebrow() {
           break;
       }
     } catch {
-      setFeedback("An error has occured");
+      setFeedback("An error has occurred");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleNewInviteRequest = async (email: string) => {
+    // Add correct endpoint here when backend is complete
+    await fetch("", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
   };
 
   const handleRemoveErrors = () => {
@@ -102,10 +112,15 @@ export function Eyebrow() {
 
   return (
     <>
-      <LoginOptionsModal isOpen={isLoginOptionsModalOpen} onClose={closeLoginOptionsModal} />
+      <LoginOptionsModal
+        isOpen={isLoginOptionsModalOpen}
+        onClose={closeLoginOptionsModal}
+        email={watch("email")}
+      />
       <OnboardingCompletionModal
         isOpen={isOnboardingCompletionModalOpen}
         onClose={closeOnboardingCompletionModal}
+        email={watch("email")}
       />
       <div className="bg-white z-40 shadow-sm">
         <div className="mx-auto px-6 py-3 w-full flex flex-col sm:flex-row items-start justify-between gap-3">

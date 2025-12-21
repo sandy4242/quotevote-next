@@ -3,15 +3,17 @@
  */
 
 export interface EyebrowFormData {
-    email: string;
+  email: string;
 }
 
 export interface LoginOptionsModalProps {
-    isOpen: boolean,
-    onClose: () => void
+  email: string | undefined;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export interface OnboardingCompletionModal {
-    isOpen: boolean,
-    onClose: () => void
+export interface OnboardingCompletionModalProps {
+  email: string | undefined;
+  isOpen: boolean;
+  onClose: () => void;
 }
