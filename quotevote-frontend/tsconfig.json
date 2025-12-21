@@ -92,6 +92,12 @@
       "@/components/Quotes/*": [
         "./src/components/Quotes/*"
       ],
+      "@/components/PostChat/*": [
+        "./src/components/PostChat/*"
+      ],
+      "@/components/Chat/*": [
+        "./src/components/Chat/*"
+      ],
       "@/components/*": [
         "./src/app/components/*"
       ],
@@ -103,6 +109,11 @@
       ],
       "@/components/BuddyList/*": [
         "./src/components/BuddyList/*"
+      "@/components/UserPosts": [
+        "./src/components/UserPosts"
+      ],
+      "@/components/UserPosts/*": [
+        "./src/components/UserPosts/*"
       ],
       "@/components/Icons": [
         "./src/components/Icons"
