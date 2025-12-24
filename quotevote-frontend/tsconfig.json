@@ -116,6 +116,9 @@
       "@/components/Icons/*": [
         "./src/components/Icons/*"
       ],
+      "@/components/VotingComponents/*": [
+        "./src/components/VotingComponents/*"
+      ],
       "@/hooks/*": [
         "./src/hooks/*"
       ],
